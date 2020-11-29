@@ -1,0 +1,41 @@
+.window-q {
+    margin-top: 10px;
+}
+.info-string  {
+    color: #848D95;
+    font-size: smaller;
+}
+.leftbar {
+    border-right: 1px solid #cfd0d2;
+    width: 200px;
+    min-height: 600px;
+    margin-left: 30px;
+}
+#author-widget {
+    margin-left: 150px;
+}
+.answer-panel {
+    border: 1px solid #cfd0d2;
+    height: 200px;
+}
+.head-main-colon {
+    width: 400px;
+    max-height: 300px;
+}
+.main-colon {
+    width: 500px;
+    min-height: 500px;
+}
+.vote-colon {
+    width: 50px;
+}
+.blog-colon {
+    border-left: 1px solid #cfd0d2;
+    width: 250px;
+    min-height: 500px;
+    margin-right: auto;
+}
+.ask-question {
+    margin-right: 50px;
+}
+
