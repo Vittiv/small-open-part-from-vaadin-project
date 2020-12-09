@@ -1,0 +1,32 @@
+
+.card {
+
+}
+.last-update {
+    text-align: right;
+}
+.question-title {
+    margin-top: -3em;
+
+}
+.question-description {
+
+}
+.tags {
+
+}
+.votes-and-answers {
+
+}
+.asked-date {
+
+}
+.author {
+    color: #c6bab0;
+    padding-left: 15px;
+    padding-bottom: 10px;
+}
+.list-question {
+    margin-left: -2em;
+
+}

@@ -41,17 +41,16 @@ public class QuestionPage extends Main implements HasUrlParameter<Integer> {
         infoString.addClassName("info-string");
         HorizontalLayout window = new HorizontalLayout();
         window.addClassName("window-q");
+
         // left bar with menu links
-
-
-        RouterLink homeLink = new RouterLink("Home", NoVaadinView.class);
-        RouterLink tagLink = new RouterLink("Tags", NoVaadinView.class);
-        RouterLink userLink = new RouterLink("Users", NoVaadinView.class);
-        homeLink.setHighlightCondition(HighlightConditions.sameLocation());
-        VerticalLayout leftBar = new VerticalLayout(homeLink, new Text("PUBLIC"), tagLink, userLink);
-        leftBar.addClassName("leftbar");
-
-        window.add(leftBar);
+//        RouterLink homeLink = new RouterLink("Home", NoVaadinView.class);
+//        RouterLink tagLink = new RouterLink("Tags", NoVaadinView.class);
+//        RouterLink userLink = new RouterLink("Users", NoVaadinView.class);
+//        homeLink.setHighlightCondition(HighlightConditions.sameLocation());
+//        VerticalLayout leftBar = new VerticalLayout(homeLink, new Text("PUBLIC"), tagLink, userLink);
+//        leftBar.addClassName("leftbar");
+//
+//        window.add(leftBar);
 
         //Question title panel
         VerticalLayout headMainColon = new VerticalLayout();
