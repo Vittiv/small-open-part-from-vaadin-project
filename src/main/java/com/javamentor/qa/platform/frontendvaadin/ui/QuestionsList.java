@@ -62,7 +62,7 @@ public class QuestionsList extends VerticalLayout implements HasUrlParameter<Str
         author.addClassName("author");
         ClickableCard qCard = new ClickableCard(
                 onClick -> {/* Handle Card click */
-                    UI.getCurrent().navigate("question");
+                    UI.getCurrent().navigate("question/" + question.getId());
 
                     },
                 lastUpdateDate,
