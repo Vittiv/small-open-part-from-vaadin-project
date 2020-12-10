@@ -5,9 +5,12 @@
 .last-update {
     text-align: right;
 }
+.all-question-title {
+    font-size: 2em ;
+
+}
 .question-title {
     margin-top: -3em;
-
 }
 .question-description {
 
@@ -17,6 +20,9 @@
 }
 .votes-and-answers {
 
+}
+.filters {
+    margin-left: auto;
 }
 .asked-date {
 
@@ -29,4 +35,7 @@
 .list-question {
     margin-left: -2em;
 
+}
+.ask-question {
+    margin-left: 200px;
 }

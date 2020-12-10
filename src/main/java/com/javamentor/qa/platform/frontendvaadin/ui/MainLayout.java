@@ -30,7 +30,7 @@ public class MainLayout extends AppLayout {
         VerticalLayout menu = new VerticalLayout();
         menu.addClassName("left=menu-bar");
         RouterLink homeLink = new RouterLink("Главная", NoVaadinView.class);
-        RouterLink questionLink = new RouterLink("Вопросы", NoVaadinView.class);
+        RouterLink questionLink = new RouterLink("Вопросы", QuestionsList.class);
         RouterLink tagLink = new RouterLink("Метки", NoVaadinView.class);
         RouterLink userLink = new RouterLink("Участники", NoVaadinView.class);
         RouterLink withoutAnswerLink = new RouterLink("Неотвеченные", NoVaadinView.class);

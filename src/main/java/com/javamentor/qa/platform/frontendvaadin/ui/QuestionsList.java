@@ -95,16 +95,16 @@ public class QuestionsList extends VerticalLayout implements HasUrlParameter<Str
         VerticalLayout mainBar = new VerticalLayout();
         mainBar.addClassName("main-bar");
         //Question title panel
-        Span allQuestions = new Span("Все вопросы");
+        Span pageTitle = new Span("Все вопросы");
         Span oneHundredQuestions = new Span("100 вопросов 100 вопросов 100 вопросов");
         oneHundredQuestions.addClassName("one-hundred-questions");
-        allQuestions.addClassName("all-question-title");
+        pageTitle.addClassName("all-question-title");
         //  'Ask Question' button
         Button askQuestion = new Button("Задать вопрос", evt -> new RouterLink("noview", NoVaadinView.class));
         askQuestion.addClassName("ask-question");
         HorizontalLayout titleHead = new HorizontalLayout();
         titleHead.addClassName("title-head");
-        titleHead.add(allQuestions, askQuestion);
+        titleHead.add(pageTitle, askQuestion);
         VerticalLayout headMainColon = new VerticalLayout();
         headMainColon.addClassName("head-main-column");
         Span tabsPanel = new Span("Новые Текущие Неотвеченные Конкурсные Еще");
@@ -129,45 +129,15 @@ public class QuestionsList extends VerticalLayout implements HasUrlParameter<Str
         if (page == null || page < 1 || page > 100) page = 1;
         if (size == null || size < 1 || size > 100) size = 10;
 
-
-        //question card
-//        add(getQuestionsCard(service.getQuestionsAsync(169)));
         // question list
-//        VerticalLayout listOfQuestionCards = new VerticalLayout();
-//        listOfQuestionCards.addClassName("question-list");
-//        listOfQuestionCards.setWidth(getMaxWidth());
         UnorderedList list = new UnorderedList();
         list.addClassName("list-question");
         list.setWidthFull();
-        List<QuestionDto> resList = service.getQuestionList(page, size);
-        resList.forEach(questionDto -> list.add(getQuestionsCard(questionDto)));
-//        listOfQuestionCards.add(list);
+        // составляем список карточек с вопросами и пишем в компонент list
+        service.getQuestionList(page, size).forEach(questionDto -> list.add(getQuestionsCard(questionDto)));
         add(list);
         //Pagination sample
-
-//        grid.addColumn(QuestionDto::getId).setHeader("ID");
-//        grid.addColumn(QuestionDto::getAuthorName).setHeader("Author").setSortable(true);
-//        grid.addColumn(QuestionDto::getTitle).setHeader("Title").setSortable(true);
-//        grid.addColumn(QuestionDto::getDescription).setHeader("Description").setSortable(true);
-//        grid.addColumn(QuestionDto::getPersistDateTime).setHeader("Date").setSortable(true);
-
-        //получаем данные с сервера
-//        ListDataProvider<QuestionDto> dataProvider = DataProvider.ofCollection(service.getQuestionList(page, size));
-//        grid.setItems(dataProvider.getItems());
-//        grid.setPage(page);
-//
-//        // Sets the max number of items to be rendered on the grid for each page
-//        grid.setPageSize(size);
-//
-//        // Sets how many pages should be visible on the pagination before and/or after the current selected page
-//        grid.setPaginatorSize(5);;
-//        add(grid);
-//        getQuestionsListfromDB();
     }
-
-//    private void getQuestionsListfromDB() {
-//        grid.setItems(service.getQuestionList(1, 5));
-//    }
 }
 /*
 private DataProvider<UserProfileView, Void> createDataProviderSpringDataAdapter(
