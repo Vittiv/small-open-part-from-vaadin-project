@@ -37,13 +37,11 @@ public class QuestionsList extends VerticalLayout implements HasUrlParameter<Str
 
     @Autowired
     transient QuestionServiceVaadin service;
-//    private PaginatedGrid<QuestionDto> grid = new PaginatedGrid<>(QuestionDto.class);
-
 
     private Component getQuestionsCard(QuestionDto question) {
         VerticalLayout questionCards = new VerticalLayout();
-        RouterLink questionPageLink = new RouterLink("", QuestionPage.class);
         questionCards.addClassName("card");
+
         //question card
         Item lastUpdateDate = new Item("", "" + question.getLastUpdateDateTime().format(DateTimeFormatter.ISO_LOCAL_DATE));
         lastUpdateDate.addClassNames("last-update");
@@ -63,7 +61,6 @@ public class QuestionsList extends VerticalLayout implements HasUrlParameter<Str
         ClickableCard qCard = new ClickableCard(
                 onClick -> {/* Handle Card click */
                     UI.getCurrent().navigate("question/" + question.getId());
-
                     },
                 lastUpdateDate,
                 questionTitle.withWhiteSpaceNoWrap(),
@@ -72,6 +69,7 @@ public class QuestionsList extends VerticalLayout implements HasUrlParameter<Str
                 votesAndAnswers,
                 askedDate,
                 author
+//                если надо добаваить кнопки действий в карточку
 //                , new Actions(
 //                        new ActionButton("Развернуть", event -> {/* Handle Action*/}),
 //                        new ActionButton("Action 2", event -> {/* Handle Action*/}))
@@ -139,30 +137,3 @@ public class QuestionsList extends VerticalLayout implements HasUrlParameter<Str
         //Pagination sample
     }
 }
-/*
-private DataProvider<UserProfileView, Void> createDataProviderSpringDataAdapter(
-						UserProfileViewService userProfileViewService ) {
-				DataProvider<UserProfileView, Void> dataProvider = DataProvider.fromCallbacks(
-								// First callback fetches items based on a query
-								query -> {
-										// The index of the first item to load
-										int offset = query.getOffset();
-
-										// The number of items to load
-										int limit = query.getLimit();
-
-										int page = offset / limit;
-
-										List<UserProfileView> userProfileViews = new ArrayList<>(
-														userProfileViewService.findAllUserProfileViews( page, limit ) );
-
-										return userProfileViews.stream();
-								},
-								// Second callback fetches the number of items
-								// for a query
-
-								query -> userProfileViewService.countUserProfileViews() );
-
-				return dataProvider;
-		}
- */
