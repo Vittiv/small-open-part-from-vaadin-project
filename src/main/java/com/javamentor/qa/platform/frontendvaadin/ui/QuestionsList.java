@@ -69,7 +69,7 @@ public class QuestionsList extends VerticalLayout implements HasUrlParameter<Str
                 votesAndAnswers,
                 askedDate,
                 author
-//                если надо добаваить кнопки действий в карточку
+//                если надо добавить кнопки действий в карточку
 //                , new Actions(
 //                        new ActionButton("Развернуть", event -> {/* Handle Action*/}),
 //                        new ActionButton("Action 2", event -> {/* Handle Action*/}))
